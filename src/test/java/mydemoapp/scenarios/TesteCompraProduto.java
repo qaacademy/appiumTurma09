@@ -42,6 +42,7 @@ public class TesteCompraProduto {
         homePage.clicarPorAccId(homePage.idAddCarrinho);
         homePage.clicarPorXpath(homePage.btnCarrinho);
         carrinhoPage.alterarAquantidadeParaTres();
+        carrinhoPage.clicarPorAccId(carrinhoPage.idAddIrParaCheckout);
 
     }
 
