@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
 
     public HomePage(AndroidDriver driverScenario) {
         super(driverScenario);
-        super.driver = driverScenario;
+        this.driver = driverScenario;
     }
 
 }

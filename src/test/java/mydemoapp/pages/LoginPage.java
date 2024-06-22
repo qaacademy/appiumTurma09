@@ -11,7 +11,7 @@ public class LoginPage extends BasePage {
 
     public LoginPage(AndroidDriver driverScenario) {
         super(driverScenario);
-        super.driver = driverScenario;
+        this.driver = driverScenario;
     }
 
 }

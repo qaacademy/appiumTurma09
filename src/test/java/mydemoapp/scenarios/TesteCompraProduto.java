@@ -58,6 +58,17 @@ public class TesteCompraProduto {
         checkoutPage.preencherCampoTextoPorAccId(checkoutPage.inputIdCodigoPostal, "89750");
         checkoutPage.preencherCampoTextoPorAccId(checkoutPage.inputIdPais, "United Kingdom");
         checkoutPage.clicarPorAccId(checkoutPage.btnIdIrParaPagamento);
+        checkoutPage.preencherCampoTextoPorAccId(checkoutPage.inputIdNomeNoCartao, "QA Academy");
+        checkoutPage.preencherCampoTextoPorAccId(checkoutPage.inputIdNumeroCartao, "5445 6899 2339 7519");
+        checkoutPage.preencherCampoTextoPorAccId(checkoutPage.inputIdDataVencimento, "07/25");
+        checkoutPage.preencherCampoTextoPorAccId(checkoutPage.inputIdCodigoDeSeguranca, "689");
+        checkoutPage.clicarPorAccId(checkoutPage.btnIdRevisarPedido);
+        checkoutPage.validarQuantidadeProduto(checkoutPage.IdQuantideTotal, "3 items");
+        checkoutPage.validarNomeProduto(checkoutPage.IdResumoNomeProduto, "Sauce Labs Backpack");
+        checkoutPage.clicarPorAccId(checkoutPage.btnIdConfirmarPedido);
+
+
+
 
     }
 
