@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import mydemoapp.pages.CarrinhoPage;
 import mydemoapp.pages.HomePage;
+import mydemoapp.pages.LoginPage;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,6 +17,7 @@ public class TesteCompraProduto {
     AndroidDriver driver;
     HomePage homePage;
     CarrinhoPage carrinhoPage;
+    LoginPage loginPage;
 
 
     @Before
@@ -33,6 +35,7 @@ public class TesteCompraProduto {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         homePage = new HomePage(driver);
         carrinhoPage = new CarrinhoPage(driver);
+        loginPage = new LoginPage(driver);
 
     }
 
@@ -43,6 +46,9 @@ public class TesteCompraProduto {
         homePage.clicarPorXpath(homePage.btnCarrinho);
         carrinhoPage.alterarAquantidadeParaTres();
         carrinhoPage.clicarPorAccId(carrinhoPage.idAddIrParaCheckout);
+        loginPage.preencherCampoTextoPorAccId(loginPage.inputIdUsername, "bob@example.com");
+        loginPage.preencherCampoTextoPorAccId(loginPage.inputIdPassword, "10203040");
+        loginPage.clicarPorAccId(loginPage.btnIdLogin);
 
     }
 
