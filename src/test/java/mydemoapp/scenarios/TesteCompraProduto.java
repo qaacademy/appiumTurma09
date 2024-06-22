@@ -3,6 +3,7 @@ package mydemoapp.scenarios;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import mydemoapp.pages.HomePage;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +13,7 @@ import java.time.Duration;
 
 public class TesteCompraProduto {
     AndroidDriver driver;
+    HomePage homePage;
 
 
     @Before
@@ -27,11 +29,14 @@ public class TesteCompraProduto {
         options.setAppActivity(".MainActivity");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        homePage = new HomePage(driver);
+
     }
 
     @Test
-    public void testeComprarProdutoAplicativo(){
-
+    public void testeComprarProdutoAplicativo() {
+        homePage.clicarPorXpath(homePage.produto);
+        homePage.clicarPorAccId(homePage.idAddCarrinho);
     }
 
 
